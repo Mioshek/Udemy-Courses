@@ -1,0 +1,47 @@
+<html>  
+    <head>  
+        <title> setInterval() method </title>  
+    </head>  
+    <body>  
+        <h1> Hello World :) :) </h1>  
+        <h3> This is an example of using the setInterval() method </h3>  
+        <p> Here, an alert dialog box displays on every three seconds. </p>  
+        
+        <script>  
+            var header = document.querySelector("h1");
+            var red = 0;
+            var green = 0;
+            var blue = 0;
+                    
+            function updateHeader(){
+                header.style.color = "rgb(" + red + ", "+ green + ", " + blue + ")";
+                console.log("frisk")
+            }
+
+            function fadeStyleFunc(){
+                var interval = setInterval(updateHeader,1500);
+                var i = 0;
+                // var j = 0;
+                // for 
+                while(true){
+                    for(;i<256;i++){
+                        red = i;
+                        console.log(red,green,blue);
+                    }
+                    for(i = 0; i<256;i++){
+                        green = i;
+                        console.log(red,green,blue);
+                    }
+                    for(i = 0; i<256;i++){
+                        blue = i;
+                        console.log(red,green,blue);
+                    }
+                }
+            
+            }  
+            
+        </script>  
+
+    </body>  
+  
+</html>  

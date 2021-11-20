@@ -1,0 +1,29 @@
+/* It's comment, I can use ctrl + / */
+
+/* 
+selected tag{
+    property: value;
+} 
+*/
+
+/* 
+color by typing color: colorName;
+color by rgb color: rgb(red, green, blue);
+color by rgb with alpha color: rgba(red, green, blue, alpha);
+*/
+
+h1{
+    color: blue;
+}
+
+li{
+    color: rgb(4, 199, 46);
+}
+
+h4{
+    color: #0895;
+}
+
+p{
+    color: rgba(255,97,12,3);
+}

@@ -1,0 +1,38 @@
+/* div{
+    color:aquamarine;
+} */
+
+/* klasy od . */
+
+/* id od # */
+/* * ovverides as much as can can't override id */
+
+.firstDiv{
+    color: blue;
+}
+
+#singledout{
+    color: greenyellow;
+}
+/* *{
+    color: blanchedalmond;
+} */
+
+h3 + ul{
+    /* unordered list immediately after h3 */
+    border: 4px dotted purple;
+    /* border-width: 4px;
+    border-color: aqua;
+    border-style: dotted; */
+}
+
+/* all links inside list */
+li a{
+    color: red;
+}
+
+li a[href="www.npr.org"]{
+    color: blue;
+    border: 7px solid orange;
+}
+
