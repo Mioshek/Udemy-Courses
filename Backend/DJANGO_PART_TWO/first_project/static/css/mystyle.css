@@ -1,0 +1,22 @@
+h1{
+    color: firebrick; 
+    text-align: center;
+    font-family: 'Mochiy Pop One';
+    font-size: 2em;
+    
+}
+
+tables, th,td{
+    border: 2px solid white;
+    color:antiquewhite;
+
+}
+body{
+    background-color: #282727;
+}
+
+h2{
+    color:white;
+}
+
+

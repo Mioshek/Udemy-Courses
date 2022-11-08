@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Jquery Lesson 25</title>
+        <style>
+            .turnBlue{
+                color:white;
+                background: blue;
+            }
+            .turnRed{
+                color:white;
+                background: red;
+            }
+        </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    <body>
+        
+    
+        <div class="container">
+
+
+        <h1>Selecting with jQuery</h1>
+        <p>You can use the $ sign to select elements from the DOM!
+          It will feel a lot like selecting using querySelectorAll().
+        </p>
+        <p>For example:</p>
+        <ul>
+          <li>Selecting all a tags:</li>
+          <ul>
+            <li>$('a')</li>
+          </ul>
+          <li>Selecting all elements from the class "container"</li>
+          <ul>
+            <li>$(".container")</li>
+          </ul>
+          <li>Selecting all elements with id "special"</li>
+          <ul>
+            <li id="special">$("#special")</li>
+          </ul>
+        </ul>
+        <h2>Here are some inputs</h2>
+        <h3>Later on we will use jQuery to interact with them!</h3>
+
+        <input type="text" name="" value="Enter Your Name">
+        <input type="submit" name="" value="Submit">
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="lesson25.js"></script>
+    </body>
+</html>

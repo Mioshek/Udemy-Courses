@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Django Assessment</title>
+</head>
+<body>
+    <h1>Assessment</h1>
+    <div>
+        {% if user %}        
+        <ol>
+            {% for entity in user %}
+            <li>User Info</li>
+            <ul>
+                <li>{{ entity.first_name }}</li>
+                <li>{{ entity.last_name }}</li>
+                <li>{{ entity.email }}</li>
+            </ul>
+        
+        {% endfor %}
+        </ol>
+        {% else %}
+        <p>No users found</p>
+        {% endif %}
+    </div>
