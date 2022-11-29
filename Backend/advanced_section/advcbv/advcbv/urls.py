@@ -20,5 +20,5 @@ from basic_app import views
 urlpatterns = [
     path("", views.IndexView.as_view(), name="index"),
     path('admin/', admin.site.urls),
-    path('basic_app/', include('basic_app.urls', namespace='basic_app'))
+    path('basic_app/', include('basic_app.urls'), name='basic_app')
 ]
