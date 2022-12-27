@@ -4,13 +4,13 @@ from django.urls import reverse
 # Create your models here.
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey('auth.User', on_delete=models.PROTECT)
     title = models.CharField(max_length=128)
     text = models.TextField(max_length=2000)
-    created_at = models.DateTimeField(default=timezone.now())
+    created_at = models.DateTimeField(default=timezone.now)
     posted_at = models.DateTimeField(blank=True, null=True)
     
-    def post(self):
+    def publish(self):
         self.posted_at = timezone.now()
         self.save()
         
@@ -25,7 +25,7 @@ class Post(models.Model):
     
     
 class Comment(models.Model):
-    post = models.ForeignKey('blog.Post', related_name='comments')
+    post = models.ForeignKey('blog.Post', related_name='comments', on_delete=models.CASCADE)
     author = models.CharField(max_length=100)
     text = models.TextField()
     create_date = models.DateTimeField(default=timezone.now)

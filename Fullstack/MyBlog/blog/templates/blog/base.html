@@ -1,12 +1,78 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} Bootstrap {% endcomment %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+    {% comment %} Medium Style Editor {% endcomment %}
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+    {% comment %} Custom Css {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/blog.css'%}">
+    {% comment %} Fonts  {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto+Mono&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    
+<body class="loader">
+
+    {% comment %} Navbar {% endcomment %}
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light techfonts custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Blog</a></li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a></li>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://www.github.com/Mioshek">Github</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://www.linkedin.com/in/mi%C5%82osz-szczygie%C5%82-28539b238/">LinkedIn</a>
+                    </li>
+                </ul>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'post_new' %}">New Post</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'post_draft_list' %}">Drafts</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page">Welcome: {{user.username}}</a></li>
+            {% else %}
+                <li class="nav-item"><a class="navbar-nav" href="{% url 'login'%}"><img src="/static/images/user.png" class="login-img"></a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    {% comment %} Content Block {% endcomment %}
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+              <div class="blog_posts">
+                {% block content %}
+                {% endblock %}
+              </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
